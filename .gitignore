@@ -1,0 +1,5 @@
+# idea and test stuff #
+*.idea*
+*.imi
+*.gradle*
+build
