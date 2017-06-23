@@ -1,13 +1,17 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class KindergartenGarden {
 
-    String[] garden;
+    private String[] garden;
+    private ArrayList<String> newStudents = new ArrayList<>(); //?
 
-    //Why Do wee need array of students? O_o
     public KindergartenGarden(String garden, String[] students) {
-        this("\n"); //invoce constructor from another one
+        this.garden = garden.split("\n");
+        this.newStudents.addAll(Arrays.asList(students));
+        Collections.sort(this.newStudents);
     }
 
     public KindergartenGarden(String garden) {
@@ -15,7 +19,12 @@ public class KindergartenGarden {
     }
 
     public List<Plant> getPlantsOfStudent(String student) {
-        int studPlace = (student.charAt(0) - 65) * 2; //ASCII trick 65 - its A(alice); 66 its B(bob) and so on
+        int studPlace;
+        if (student.charAt(0) > 76) {
+            studPlace = newStudents.indexOf(student) * 2;
+        } else {
+            studPlace = (student.charAt(0) - 65) * 2; //ASCII trick 65 - its A(alice); 66 its B(bob) and so on
+        }
         List<Plant> plants = new ArrayList<>();
         for (String row : garden) {
             plants.add(Plant.getPlant(row.charAt(studPlace)));
