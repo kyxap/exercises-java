@@ -6,7 +6,6 @@ public class DNA {
     Map<Character, Integer> nuc = new HashMap();
     public DNA(String s) {
         this.dna = s;
-
         this.nuc.put('A', 0);
         this.nuc.put('C', 0);
         this.nuc.put('G', 0);
