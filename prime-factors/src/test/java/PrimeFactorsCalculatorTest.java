@@ -29,7 +29,9 @@ public class PrimeFactorsCalculatorTest {
                 {27L, Arrays.asList(3L, 3L, 3L)},
                 {625L, Arrays.asList(5L, 5L, 5L, 5L)},
                 {901255L, Arrays.asList(5L, 17L, 23L, 461L)},
-                {93819012551L, Arrays.asList(11L, 9539L, 894119L)}
+                {93819012551L, Arrays.asList(11L, 9539L, 894119L)},
+                {600851475143L, Arrays.asList(71L, 839L, 1471L, 6857L)}
+
         });
     }
 
