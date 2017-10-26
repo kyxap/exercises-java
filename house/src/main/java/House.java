@@ -6,26 +6,14 @@ import java.util.List;
 
 public class House {
 
-    String f = "This is the house that Jack built.";
 
-    /**
-     "This is the horse and the hound and the horn\n" +
-     "that belonged to the farmer sowing his corn\n" +
-     "that kept the rooster that crowed in the morn\n" +
-     "that woke the priest all shaven and shorn\n" +
-     "that married the man all tattered and torn\n" +
-     "that kissed the maiden all forlorn\n" +
-     "that milked the cow with the crumpled horn\n" +
-     "that tossed the dog\n" +
-     "that worried the cat\n" +
-     "that killed the rat\n" +
-     "that ate the malt\n" +
-     "that lay in the house that Jack built.";
-     */
-
-    List<String> array = Arrays.asList("house that Jack built.", "malt", "rat", "cat", "dog", "cow", "forlorn");
-    List<String> array2 = Arrays.asList("ate", "killed", "worried", "tossed", "milked", "?", "!");
-    List<String> array3 = Arrays.asList("maiden all");
+    List<String> array = Arrays.asList("house that Jack built.", "malt", "rat", "cat", "dog", "cow", "maiden", "man",
+            "priest", "rooster", "farmer", "horse", "@", "#");
+    List<String> array2 = Arrays.asList("ate", "killed", "worried", "tossed", "milked", "kissed", "married", "woke",
+            "kept", "belonged to", "?", "!");
+    List<String> array3 = Arrays.asList("with the crumpled horn", "all forlorn", "all tattered and torn",
+            "all shaven and shorn", "that crowed in the morn", "sowing his corn", "and the hound and the horn",
+            "$", "%");
 
     String this_w = "This is the ";
     String that = "that lay in the ";
@@ -38,11 +26,9 @@ public class House {
         else {
             for (int i = 0; i <= verse - 1; i++) {
                 String toAdd = array.get(i);
-//                if (i == 6 - 1) {  //if not last and not 6th due to next
-//                    toAdd = this_w + array.get(i) + " with the crumpled horn";
-//                } else if (i == 7 -1 && verse == 7) {
-//                    toAdd = this_w + array3.get(i - 6) + " " +  array.get(i);
-//                }
+                if (i >= 5) {  //if not last and not 6th due to next
+                    toAdd = array.get(i) + " " + array3.get(i - 5);
+                }
                 if (i == verse -1) { //last
                     toAdd = this_w + toAdd;
 
@@ -63,15 +49,22 @@ public class House {
         for (String a : list) {
             rez += a + "\n";
         }
-        System.out.println(rez.substring(0, rez.length() - 1));
         return rez.substring(0, rez.length() - 1);
     }
 
     public String verses(int startVerse, int endVerse) {
-        return null;
+        String rez = "";
+        for (int i = startVerse; i <= endVerse; i++){
+            rez = rez += verse(i) + "\n\n";
+        }
+        System.out.println(rez.substring(0, rez.length() - 1));
+        return rez.substring(0, rez.length() - 2);
     }
 
+    /**
+     * @return
+     */
     public String sing() {
-        return "";
+        return verses(1, 12);
     }
 }
