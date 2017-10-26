@@ -31,7 +31,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseThree() {
         String expected =
@@ -43,7 +42,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseFour() {
         String expected =
@@ -56,7 +54,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseFive() {
         String expected =
@@ -70,7 +67,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseSix() {
         String expected =
@@ -85,7 +81,6 @@ public class HouseTest {
         assertEquals(expected, house.verse(verse));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verseSeven() {
         String expected =
