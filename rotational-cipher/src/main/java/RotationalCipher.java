@@ -9,6 +9,13 @@ public class RotationalCipher {
         this.rotation = i;
     }
 
+    public RotationalCipher(int i, int y) {
+        while (i - max >= 0) {
+            i = i - max;
+        }
+        this.rotation = i;
+    }
+
     public String rotate(String str) {
         String rez = "";
         for (char c : str.toCharArray()) {

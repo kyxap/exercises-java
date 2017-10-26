@@ -24,6 +24,7 @@ public class RomanNumeralsTest {
                 {4, "IV"},
                 {5, "V"},
                 {6, "VI"},
+                {98, "XCVIII"},
                 {9, "IX"},
                 {27, "XXVII"},
                 {48, "XLVIII"},
